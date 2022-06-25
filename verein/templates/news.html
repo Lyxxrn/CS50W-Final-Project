@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <title>Segeln</title>
+        <link href="\static\style.css" rel="stylesheet">
+        <script src="\static\functions.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <nav class="navbar">
+            <div id="menu" class="menu">
+                <ul>
+                    <li><a href="{% url 'index' %}" >Home</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div id="news-view">
+            <h2>{{ news.title }}</h2>
+            <br>
+            <a>{{ news.content }}</a> <br>
+        </div>
+        <a id="date">Veröffentlicht am: {{ news.time }}</a>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <title>Segeln</title>
+        <link href="\static\style.css" rel="stylesheet">
+        <script src="\static\functions.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <nav class="navbar">
+            <div id="menu" class="menu">
+                <ul>
+                    <li><a href="{% url 'index' %}" >Home</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div id="news-edit-form">
+            <h1>News Bearbeiten</h1>
+            <form action="{% url 'news_edit' title=news.title %}" method="post">
+                {% csrf_token %}
+                <input type="text" name="title" placeholder="Titel" value="{{ news.title }}"> <br>
+                <textarea name="content" placeholder="Text">{{ news.content }}</textarea> <br>
+        
+                <input class="btn btn-primary" type="submit" value="Bearbeiten">
+            </form>
+        </div>
+    </body>
+</html>

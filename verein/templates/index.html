@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <title>Segeln</title>
+        <link href="\static\style.css" rel="stylesheet">
+        <script src="\static\functions.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <nav class="navbar">
+            <div id="menu" class="menu">
+                <ul>
+                    <li><a href="#" onclick="showOne('title')">Home</a></li>
+                    <li><a href="#" onclick="showOne('verein')">Der Verein</a></li>
+                    <li><a href="#" onclick="news()">News</a></li>
+                    <li><a href="#" onclick="events()">Events</a></li>
+
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'member' %}">Mitglieder Seite</a></li>
+                        <li><a href="{% url 'logout' %}">Logout</a></li>
+                    {% else %}
+                        <li><a href="{% url 'login' %}">Login</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+          
+        <div id="title" data-page="title">
+            <h1>Kuttersegelclub "Blau-Weiß-Wolgast" e.V.</h1>
+            <button type="button" onclick="showOne('contact')"><span></span>Kontakt</button>
+            <button type="button" onclick="window.location.href = 'http://lssv-mv.de/';"><span></span>Landesverband</button>
+        </div>
+        <br>
+
+        <div id="verein">
+            <h2>Unser Verein</h2>
+            <br>
+            <a>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
+
+                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   
+                
+                Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   
+                
+                Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.   
+                
+                Duis autem vel eum iriure
+            </a>
+        </div>
+
+        <div id="news"></div>
+        
+        <div id="events"></div>
+
+        <div id="contact">
+            <h2>Kontakt</h2>
+            <a id="adress">
+                Kuttersegelclub "Blau-Weiß-Wolgast" <br>
+                Dorfstraße 1a, <br>
+                17438 Wolgast <br>
+            </a>
+
+            <a id="contactinfo">
+                Tel.: 012345678911 <br>
+                E-Mail: foo@mail.com <br>
+            </a>
+
+            <a href="https://www.google.com/maps/place/Kuttersegelclub+%22Blau-Wei%C3%9F-Wolgast%22/@54.0630635,13.7970786,17z/data=!3m1!4b1!4m5!3m4!1s0x47ab07e5d4e5c331:0xc61db546dad4e043!8m2!3d54.0630635!4d13.7992673">
+                <img src="\static\mapsicon.jpg" alt="Google Maps" id="mapsicon" > <br>
+            </a>
+            <a>Google Maps</a>
+        </div>
+    </body>
+</html>

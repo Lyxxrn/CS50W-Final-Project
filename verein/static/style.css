@@ -1,0 +1,686 @@
+*{
+    font-family: sans-serif;
+}
+
+a:link { text-decoration: none; }
+
+body {
+    background-color: rgb(36, 36, 36);
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: darkgrey;
+}
+
+::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90%;
+    z-index: 9999;
+    margin-bottom: 10vh;
+    padding: 35px 0;
+    display: inline-flex;
+    align-items: left;
+    justify-content: space-between;
+}
+
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+.navbar ul a{
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #009688;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+.navbar ul li:hover::after{
+    width: 100%;
+}
+
+#title {
+    display: none;
+    overflow: hidden;
+    left: 0;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    color: #fff;
+    height:fit-content;
+    display: block;
+    bottom: -10px;
+
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(mainbackground.jpg);
+    background-size: cover;
+
+    animation-name: slide;
+    animation-duration: 440s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slide {
+    from {
+        background-position: 30%;
+    }
+
+    to {
+        background-position: 100%;
+    }
+}
+
+#title h1{
+    font-size: 54px;
+    margin-top: 40vh;
+    z-index: 1;
+    color: #ffffff; 
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+
+
+button{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+span{
+    background: #009688;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+button:hover span{
+    width: 100%;
+}
+button:hover{
+    border: none;
+}
+
+
+.show {
+    animation-name: show;
+    animation-duration: 1s;
+}
+
+.disappear {
+    animation-name: disappear;
+    animation-duration: 2s;
+}
+
+@keyframes show {
+    from {
+        left: 100%;
+    }
+
+    to {
+        left: 5%;
+    }
+}
+
+#verein{
+    top: 10%;
+    display: none;
+    position: absolute;
+    max-height: 100vh;
+    left: 5%;
+    width: 90%;
+}
+
+#verein h2 {
+    margin-top: 10px;
+    color: #fe921f; 
+    font-family: 'Lato', sans-serif; 
+    font-size: 54px; font-weight: 300; 
+    line-height: 58px; 
+    }
+
+#verein a {
+    color: #adb7bd; 
+    font-family: 'Lucida Sans', Arial, sans-serif; 
+    font-size: 16px; 
+    line-height: 26px; 
+    text-indent: 30px; 
+    margin: 0;  
+}
+
+#news{
+    top: 10%;
+    display: none;
+    position: absolute;
+    max-height: 100vh;
+    left: 5%;
+    width: 90%;
+}
+
+#news h2 {
+    margin-top: 10px;
+    color: #fe921f; 
+    font-family: 'Lato', sans-serif; 
+    font-size: 27px; font-weight: 300; 
+    line-height: 58px;; 
+}
+
+#news a {
+    color: grey; 
+    font-family: 'Lucida Sans', Arial, sans-serif; 
+    font-size: 12px; 
+    line-height: 12px; 
+    margin: 0;
+    left: 50%
+}
+
+#events{
+    top: 10%;
+    display: none;
+    position: absolute;
+    max-height: 100vh;
+    left: 5%;
+    width: 90%;
+}
+
+#events h2 {
+    margin-top: 10px;
+    color: #fe921f; 
+    font-family: 'Lato', sans-serif; 
+    font-size: 27px; font-weight: 300; 
+    line-height: 58px;; 
+}
+
+#events a {
+    color: white; 
+    font-family: 'Lucida Sans', Arial, sans-serif; 
+    font-size: 16px; 
+    line-height: 16px; 
+    margin: 0;
+    left: 50%
+}
+
+#contact{
+    top: 20%;
+    display: none;
+    position: absolute;
+    max-height: 100vh;
+    left: 5%;
+    width: 90%;
+}
+
+#contact h2 {
+    margin-top: 10px;
+    left: 40%;
+    color: #fe921f; 
+    font-family: 'Lato', sans-serif; 
+    font-size: 54px; font-weight: 300; 
+    line-height: 58px; 
+    }
+
+#contact a {
+    color: #adb7bd; 
+    font-family: 'Lucida Sans', Arial, sans-serif; 
+    font-size: 16px; 
+    line-height: 26px; 
+    text-indent: 30px; 
+    margin: 0;  
+}
+
+#mapsicon {
+    height: 50px;
+    width: 50px;
+
+    margin-top: 15%;
+}
+
+#login {
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    width: 300px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: #191919;
+    text-align: center;
+}
+
+#login h1 {
+    margin-top: 10px;
+    color: white; 
+    font-family: 'Lato', sans-serif; 
+    font-size: 54px; font-weight: 300; 
+    line-height: 58px; 
+    }
+
+#login input {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 0px auto;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+#login input:focus {
+    width: 280px;
+    border-color: #009688;
+}
+
+#title-member {
+    display: none;
+    overflow: hidden;
+    left: 0;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    color: #fff;
+    height:fit-content;
+    display: block;
+    bottom: -10px;
+
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(verein1.1.jpg);
+    background-size: cover;
+
+    animation-name: slide;
+    animation-duration: 440s;
+    animation-fill-mode: forwards;
+}
+
+#title-member h1{
+    font-size: 54px;
+    margin-top: 40vh;
+    z-index: 1;
+    color: #ffffff; 
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+
+#news-form {
+    display: none;
+    top: 10%;
+    position: absolute;
+    left: 5%;
+    text-align: center;
+}
+
+#news-form h1 {
+    margin-top: 10px;
+    color: white; 
+    font-family: 'Lato', sans-serif; 
+    font-size: 54px; font-weight: 300; 
+    line-height: 58px; 
+    }
+
+#news-form input {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 0px auto;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 90vw;
+    outline: none;
+    color: white;
+    border-radius: 10px;
+    transition: 0.25s;
+}
+
+#news-form input:focus {
+    border-color: #009688;
+}
+
+#news-form textarea:focus {
+    border-color: #009688;
+}
+
+#news-form textarea {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 0px auto;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 90vw;
+    height: 45vw;
+    outline: none;
+    color: white;
+    border-radius: 10px;
+    transition: 0.25s;
+}
+
+#event-form {
+    display: none;
+    top: 10%;
+    position: absolute;
+    left: 5%;
+    text-align: center;
+}
+
+#event-form h1 {
+    margin-top: 10px;
+    color: white; 
+    font-family: 'Lato', sans-serif; 
+    font-size: 54px; font-weight: 300; 
+    line-height: 58px; 
+    }
+
+#event-form input {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 0px auto;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 90vw;
+    outline: none;
+    color: white;
+    border-radius: 10px;
+    transition: 0.25s;
+}
+
+#event-form input:focus {
+    border-color: #009688;
+}
+
+#event-form textarea:focus {
+    border-color: #009688;
+}
+
+#event-form textarea {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 0px auto;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 90vw;
+    height: 45vw;
+    outline: none;
+    color: white;
+    border-radius: 10px;
+    transition: 0.25s;
+}
+
+#event-form input {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 0px auto;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 90vw;
+    outline: none;
+    color: white;
+    border-radius: 10px;
+    transition: 0.25s;
+}
+
+#news-edit-form {
+    display: none;
+    top: 10%;
+    position: absolute;
+    left: 5%;
+    text-align: center;
+}
+
+#news-edit-form h1 {
+    margin-top: 10px;
+    color: white; 
+    font-family: 'Lato', sans-serif; 
+    font-size: 54px; font-weight: 300; 
+    line-height: 58px; 
+    }
+
+#news-edit-form input {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 0px auto;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 90vw;
+    outline: none;
+    color: white;
+    border-radius: 10px;
+    transition: 0.25s;
+}
+
+#news-edit-form input:focus {
+    border-color: #009688;
+}
+
+#news-edit-form textarea {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 0px auto;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 90vw;
+    height: 45vw;
+    outline: none;
+    color: white;
+    border-radius: 10px;
+    transition: 0.25s;
+}
+
+#news-view{
+    top: 10%;
+    display: block;
+    position: absolute;
+    max-height: 100vh;
+    left: 5%;
+    width: 90%;
+}
+
+#news-view h2 {
+    margin-top: 10px;
+    color: #fe921f; 
+    font-family: 'Lato', sans-serif; 
+    font-size: 54px; font-weight: 300; 
+    line-height: 58px; 
+    }
+
+#news-view a {
+    color: #adb7bd; 
+    font-family: 'Lucida Sans', Arial, sans-serif; 
+    font-size: 16px; 
+    line-height: 26px; 
+    text-indent: 30px; 
+    margin: 0;  
+}
+
+#date {
+    color: grey; 
+    font-family: 'Lucida Sans', Arial, sans-serif; 
+    font-size: 12px; 
+    line-height: 12px; 
+    margin-top: 30px;
+    top: 80%;
+    display: block;
+    position: absolute;
+    max-height: 100vh;
+    left: 5%;
+    width: 90%;; 
+}
+
+#events h1{
+    font-size: 54px;
+    z-index: 1;
+    color: #ffffff; 
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+
+#news h1{
+    font-size: 54px;
+    z-index: 1;
+    color: #ffffff; 
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+
+#event-edit-form {
+    display: block;
+    top: 10%;
+    position: absolute;
+    left: 5%;
+    text-align: center;
+}
+
+#event-edit-form h1 {
+    margin-top: 10px;
+    color: white; 
+    font-family: 'Lato', sans-serif; 
+    font-size: 54px; font-weight: 300; 
+    line-height: 58px; 
+    }
+
+#event-edit-form input {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 0px auto;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 90vw;
+    outline: none;
+    color: white;
+    border-radius: 10px;
+    transition: 0.25s;
+}
+
+#event-edit-form input:focus {
+    border-color: #009688;
+}
+
+#event-edit-form textarea:focus {
+    border-color: #009688;
+}
+
+#event-edit-form textarea {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 0px auto;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 90vw;
+    height: 45vw;
+    outline: none;
+    color: white;
+    border-radius: 10px;
+    transition: 0.25s;
+}
+
+#event-edit-form input {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 0px auto;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 90vw;
+    outline: none;
+    color: white;
+    border-radius: 10px;
+    transition: 0.25s;
+}
+
+#news-edit-form {
+    display: block;
+    top: 10%;
+    position: absolute;
+    left: 5%;
+    text-align: center;
+}
+
+#news-edit-form h1 {
+    margin-top: 10px;
+    color: white; 
+    font-family: 'Lato', sans-serif; 
+    font-size: 54px; font-weight: 300; 
+    line-height: 58px; 
+    }
+
+#news-edit-form input {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 0px auto;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 90vw;
+    outline: none;
+    color: white;
+    border-radius: 10px;
+    transition: 0.25s;
+}
+
+#news-edit-form input:focus {
+    border-color: #009688;
+}
+
+#news-edit-form textarea:focus {
+    border-color: #009688;
+}
+
+#news-edit-form textarea {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 0px auto;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 90vw;
+    height: 45vw;
+    outline: none;
+    color: white;
+    border-radius: 10px;
+    transition: 0.25s;
+}

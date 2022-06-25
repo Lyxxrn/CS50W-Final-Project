@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <title>Segeln</title>
+        <link href="\static\style.css" rel="stylesheet">
+        <script src="\static\functions.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <nav class="navbar">
+            <div id="menu" class="menu">
+                <ul>
+                    <li><a href="{% url 'index' %}" >Home</a></li>
+                    <li><a href="#" onclick="showOne('news-form')">Neue News</a></li>
+                    <li><a href="#" onclick="showOne('event-form')">Neues Event</a></li>
+                    <li><a href="#" onclick="edit_news()">News Bearbeiten</a></li>
+                    <li><a href="#" onclick="edit_events()">Events Bearbeiten</a></li>
+                </ul>
+            </div>
+        </nav>
+          
+        <div id="title-member" data-page="title">
+            <h1>Mitgliederseite</h1>
+            <a">Hier können neue News und Events für die normale Homepage erstellt und editiert werden.</a> <br> <br> <br>
+            {% if message %}
+                <a style="color: rgb(144, 144, 158);">{{ message }}</a>
+            {% endif %}
+        </div>
+        <div id="news-form">
+            <h1>Neue News</h1>
+            <form action="{% url 'news' %}" method="post">
+                {% csrf_token %}
+                <input type="text" name="title" placeholder="Titel"> <br>
+                <textarea name="content" placeholder="Text"></textarea> <br>
+
+                <input class="btn btn-primary" type="submit" value="Veröffentlichen">
+            </form>
+        </div>
+        <div id="event-form">
+            <h1>Neues Event</h1>
+            <form action="{% url 'event' %}" method="post">
+                {% csrf_token %}
+                <input type="text" name="title" placeholder="Titel"> <br>
+                <input type="date" name="date" value="2022-07-22">
+                <textarea name="describtion" placeholder="Beschreibung"></textarea> <br>
+
+                <input class="btn btn-primary" type="submit" value="Veröffentlichen">
+            </form>
+        </div>
+
+        <div id="news"></div>
+        
+        <div id="events"></div>
+    </body>
+</html>
